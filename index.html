@@ -14,7 +14,16 @@
   Your browser does not support the audio element.
 </audio>
 
-
+<audio id="background-music" autoplay loop>
+  <source src="https://YOUR_EXTERNAL_HOST/link-to-Fall-In-Love.mp3" type="audio/mpeg">
+</audio>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const audio = document.getElementById("background-music");
+    const enable = () => { audio.play().catch(()=>{}); document.removeEventListener("click", enable); };
+    document.addEventListener("click", enable);
+  });
+</script>
 
 
   <script src="script.js"></script>
