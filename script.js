@@ -119,13 +119,11 @@ const observer = new IntersectionObserver((entries) => {
   });
 });
 
-
-document.querySelectorAll(".reason").forEach((el) => observer.observe(el));
-
 // Fix autoplay block by browsers
 document.addEventListener("DOMContentLoaded", () => {
   const audio = document.getElementById("background-music");
 
+  // Play after first user interaction
   const enableAudio = () => {
     audio.play().catch((e) => {
       console.log("Audio autoplay blocked until interaction.");
@@ -137,3 +135,5 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("click", enableAudio);
   document.addEventListener("keydown", enableAudio);
 });
+
+document.querySelectorAll(".reason").forEach((el) => observer.observe(el));
