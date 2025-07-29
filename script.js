@@ -1,5 +1,5 @@
 const reasons = [
-  "You are mu cupcake 🧁",
+  "You are my cupcake 🧁",
   "Your smile makes my day better 😊",
   "You always listen to me when I need it 🫶",
   "You make even ordinary moments feel special 🌟",
