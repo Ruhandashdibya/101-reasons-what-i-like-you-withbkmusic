@@ -153,3 +153,19 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("keydown", enableAudio);
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const audio = document.getElementById("background-music");
+
+  const enableAudio = () => {
+    audio.play().catch((e) => {
+      console.log("Autoplay blocked until interaction.");
+    });
+    document.removeEventListener("click", enableAudio);
+    document.removeEventListener("keydown", enableAudio);
+  };
+
+  document.addEventListener("click", enableAudio);
+  document.addEventListener("keydown", enableAudio);
+});
+
+
