@@ -122,22 +122,7 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll(".reason").forEach((el) => observer.observe(el));
 
-document.addEventListener("DOMContentLoaded", () => {
-  const audio = document.getElementById("background-music");
-
-  const enableAudio = () => {
-    audio.play().catch((e) => {
-      console.log("Autoplay blocked, waiting for user interaction.");
-    });
-    document.removeEventListener("click", enableAudio);
-    document.removeEventListener("keydown", enableAudio);
-  };
-
-  document.addEventListener("click", enableAudio);
-  document.addEventListener("keydown", enableAudio);
-});
-
-
+// Fix autoplay block by browsers
 document.addEventListener("DOMContentLoaded", () => {
   const audio = document.getElementById("background-music");
 
@@ -152,20 +137,3 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("click", enableAudio);
   document.addEventListener("keydown", enableAudio);
 });
-
-document.addEventListener("DOMContentLoaded", () => {
-  const audio = document.getElementById("background-music");
-
-  const enableAudio = () => {
-    audio.play().catch((e) => {
-      console.log("Autoplay blocked until interaction.");
-    });
-    document.removeEventListener("click", enableAudio);
-    document.removeEventListener("keydown", enableAudio);
-  };
-
-  document.addEventListener("click", enableAudio);
-  document.addEventListener("keydown", enableAudio);
-});
-
-
