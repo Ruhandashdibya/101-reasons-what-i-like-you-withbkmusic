@@ -122,13 +122,12 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll(".reason").forEach((el) => observer.observe(el));
 
-// Fix autoplay block by browsers
 document.addEventListener("DOMContentLoaded", () => {
   const audio = document.getElementById("background-music");
 
   const enableAudio = () => {
     audio.play().catch((e) => {
-      console.log("Audio autoplay blocked until interaction.");
+      console.log("Autoplay blocked, waiting for user interaction.");
     });
     document.removeEventListener("click", enableAudio);
     document.removeEventListener("keydown", enableAudio);
@@ -137,3 +136,4 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("click", enableAudio);
   document.addEventListener("keydown", enableAudio);
 });
+
