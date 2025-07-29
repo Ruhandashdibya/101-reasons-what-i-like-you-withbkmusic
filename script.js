@@ -126,7 +126,6 @@ document.querySelectorAll(".reason").forEach((el) => observer.observe(el));
 document.addEventListener("DOMContentLoaded", () => {
   const audio = document.getElementById("background-music");
 
-  // Play after first user interaction
   const enableAudio = () => {
     audio.play().catch((e) => {
       console.log("Audio autoplay blocked until interaction.");
