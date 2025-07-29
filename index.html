@@ -10,14 +10,14 @@
   <div class="reasons-container" id="reasons"></div>
 
 <audio id="background-music" autoplay loop>
-  <source src="https://YOUR_EXTERNAL_HOST/link-to-Fall-In-Love.mp3" type="audio/mpeg">
+  <source src="https://archive.org/download/YOUR_ITEM_IDENTIFIER/Fall-In-Love.mp3" type="audio/mpeg">
 </audio>
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const audio = document.getElementById("background-music");
-    const enable = () => { audio.play().catch(()=>{}); document.removeEventListener("click", enable); };
-    document.addEventListener("click", enable);
-  });
+  document.addEventListener("click", () => {
+    document.getElementById("background-music").play().catch(()=>{
+      console.log("Playback blocked until interaction");
+    });
+  }, { once: true });
 </script>
 
 
