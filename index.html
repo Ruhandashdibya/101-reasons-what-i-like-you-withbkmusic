@@ -9,12 +9,30 @@
   <h1 class="title">💖 101 Reasons Why I Like You 💖</h1>
   <div class="reasons-container" id="reasons"></div>
 
+  <!-- Background music using online source -->
   <audio id="background-music" autoplay loop>
-  <source src="Fall-In-Love-chosic.com_.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-
+    <source src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Alex-Productions/Love/Alex-Productions_-_Fall_In_Love.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
   <script src="script.js"></script>
+
+  <!-- Enable audio after user interaction -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const audio = document.getElementById("background-music");
+
+      const enableAudio = () => {
+        audio.play().catch((e) => {
+          console.log("Autoplay blocked, waiting for interaction.");
+        });
+        document.removeEventListener("click", enableAudio);
+        document.removeEventListener("keydown", enableAudio);
+      };
+
+      document.addEventListener("click", enableAudio);
+      document.addEventListener("keydown", enableAudio);
+    });
+  </script>
 </body>
 </html>
