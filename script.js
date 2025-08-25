@@ -1,5 +1,5 @@
 const reasons = [
-  "You are my cupcake 🧁",
+  "You are my SHONI 👻",
   "Your smile makes my day better 😊",
   "You always listen to me when I need it 🫶",
   "You make even ordinary moments feel special 🌟",
@@ -137,3 +137,4 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.querySelectorAll(".reason").forEach((el) => observer.observe(el));
+
